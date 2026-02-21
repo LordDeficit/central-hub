@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="main-glass">
+    <main className="min-h-screen flex flex-col items-center justify-start gap-6 p-8 bg-black">
       {/* Header */}
       <header className="w-full max-w-6xl text-center">
         <h1 className="header-glass">
