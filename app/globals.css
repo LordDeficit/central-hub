@@ -1,14 +1,20 @@
+/* globals.css for Tailwind v4 with Next.js 16 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html.dark, body.dark {
+  background-color: #000;
+  color: #fff;
+}
+
 /* ---------------- Glassmorphism ---------------- */
 .glass {
-  border-radius: 1rem; /* rounded-xl */
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* shadow-lg */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* light border */
-  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
-  backdrop-filter: blur(12px); /* blur effect */
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 .dark .glass {
@@ -16,10 +22,10 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* ---------------- Buttons ---------------- */
+/* Buttons */
 .btn-glass {
-  padding: 0.5rem 1rem; /* px-4 py-2 */
-  border-radius: 0.5rem; /* rounded-lg */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   border: 1px solid rgba(255,255,255,0.25);
   background-color: rgba(255,255,255,0.2);
   color: white;
@@ -40,10 +46,10 @@
   border-color: rgba(255,255,255,0.2);
 }
 
-/* ---------------- Panels ---------------- */
+/* Panels */
 .panel {
-  padding: 1.5rem; /* p-6 */
-  margin-bottom: 1.5rem; /* mb-6 */
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 10px 15px rgba(0,0,0,0.1);
   background-color: rgba(255,255,255,0.1);
@@ -54,25 +60,25 @@
   background-color: rgba(0,0,0,0.2);
 }
 
-/* ---------------- Text Helpers ---------------- */
+/* Text helpers */
 .text-glass {
   color: rgba(255,255,255,0.9);
   text-shadow: 0 0 8px rgba(0,0,0,0.25);
 }
 
-/* ---------------- Links ---------------- */
+/* Links */
 .link-glass {
   text-decoration: underline;
-  text-decoration-color: rgba(147,197,253,0.5); /* sky-200 */
-  color: #0ea5e9; /* sky-400 */
+  text-decoration-color: rgba(147,197,253,0.5);
+  color: #0ea5e9;
   transition: all 0.2s;
 }
 .link-glass:hover {
-  color: #38bdf8; /* sky-300 */
-  text-decoration-color: rgba(147,197,253,0.3); /* sky-100 */
+  color: #38bdf8;
+  text-decoration-color: rgba(147,197,253,0.3);
 }
 
-/* ---------------- Misc ---------------- */
+/* Misc */
 .main-glass {
   display: flex;
   flex-direction: column;
@@ -84,9 +90,9 @@
 }
 
 .card-glass {
-  padding: 1.25rem; /* p-5 */
-  border-radius: 1rem; /* rounded-2xl */
-  box-shadow: 0 25px 50px rgba(0,0,0,0.1); /* shadow-xl */
+  padding: 1.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
   background-color: rgba(255,255,255,0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
