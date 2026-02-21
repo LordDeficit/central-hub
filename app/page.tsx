@@ -26,10 +26,8 @@ export default function Home() {
 
       {/* Dashboard Cards */}
       <section className="grid w-full max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[{"href": "https://nextjs.org/docs", "title": "Docs →", "desc": "Find in-depth information about Next.js features and API."}, {"href": "https://nextjs.org/learn", "title": "Learn →", "desc": "Interactive course with quizzes to level up your Next.js skills."}, {"href": "https://vercel.com/templates?framework=next.js", "title": "Templates →", "desc": "Pre-built Next.js projects you can clone and deploy instantly."}, {"href": "https://vercel.com/new", "title": "Deploy →", "desc": "Launch your Next.js app with a single click on Vercel."}].map((card) => (
-          <a
-            key={card.href}
-            href={card.href}
+        {[ { href: "https://nextjs.org/docs", title: "Docs →", desc: "Find in-depth information about Next.js features and API." }, { href: "https://nextjs.org/learn", title: "Learn →", desc: "Interactive course with quizzes to level up your Next.js skills." }, { href: "https://vercel.com/templates?framework=next.js", title: "Templates →", desc: "Pre-built Next.js projects you can clone and deploy instantly." }, { href: "https://vercel.com/new", title: "Deploy →", desc: "Launch your Next.js app with a single click on Vercel." } ].map((card) => (
+          <a key={card.href} href={card.href}
             className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl p-6 flex flex-col justify-between transition-transform hover:scale-105 hover:shadow-2xl"
             target="_blank"
             rel="noopener noreferrer"
