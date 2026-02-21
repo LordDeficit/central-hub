@@ -1,0 +1,96 @@
+/* ---------------- Glassmorphism ---------------- */
+.glass {
+  border-radius: 1rem; /* rounded-xl */
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* shadow-lg */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* light border */
+  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  backdrop-filter: blur(12px); /* blur effect */
+  -webkit-backdrop-filter: blur(12px);
+}
+.dark .glass {
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------- Buttons ---------------- */
+.btn-glass {
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid rgba(255,255,255,0.25);
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease-in-out;
+}
+.btn-glass:hover {
+  background-color: rgba(255,255,255,0.3);
+  border-color: rgba(255,255,255,0.4);
+}
+.dark .btn-glass {
+  background-color: rgba(0,0,0,0.25);
+  border-color: rgba(255,255,255,0.1);
+}
+.dark .btn-glass:hover {
+  background-color: rgba(0,0,0,0.4);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* ---------------- Panels ---------------- */
+.panel {
+  padding: 1.5rem; /* p-6 */
+  margin-bottom: 1.5rem; /* mb-6 */
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  background-color: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.dark .panel {
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* ---------------- Text Helpers ---------------- */
+.text-glass {
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 0 8px rgba(0,0,0,0.25);
+}
+
+/* ---------------- Links ---------------- */
+.link-glass {
+  text-decoration: underline;
+  text-decoration-color: rgba(147,197,253,0.5); /* sky-200 */
+  color: #0ea5e9; /* sky-400 */
+  transition: all 0.2s;
+}
+.link-glass:hover {
+  color: #38bdf8; /* sky-300 */
+  text-decoration-color: rgba(147,197,253,0.3); /* sky-100 */
+}
+
+/* ---------------- Misc ---------------- */
+.main-glass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card-glass {
+  padding: 1.25rem; /* p-5 */
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1); /* shadow-xl */
+  background-color: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.2s ease-in-out;
+}
+.card-glass:hover {
+  transform: scale(1.05);
+}
+.dark .card-glass {
+  background-color: rgba(0,0,0,0.25);
+}
