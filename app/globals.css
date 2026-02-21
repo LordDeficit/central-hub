@@ -1,8 +1,8 @@
-/* globals.css for Tailwind v4 with Next.js 16 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Force dark background for html and body in dark mode */
 html.dark, body.dark {
   background-color: #000;
   color: #fff;
