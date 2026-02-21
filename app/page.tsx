@@ -13,8 +13,8 @@ export default function Home() {
         </p>
       </header>
 
-      {/* Logos / Center Image */}
-      <div className="relative z-[-1] flex justify-center items-center w-full max-w-4xl">
+      {/* Center Logo */}
+      <div className="relative z-0 flex justify-center items-center w-full max-w-4xl">
         <Image
           src="/next.svg"
           alt="Next.js Logo"
@@ -26,62 +26,29 @@ export default function Home() {
 
       {/* Dashboard Cards */}
       <section className="grid w-full max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a
-          href="https://nextjs.org/docs"
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-5 rounded-2xl shadow-xl transition-transform hover:scale-105"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="text-2xl font-semibold text-white/90 drop-shadow-md mb-2">Docs &rarr;</h2>
-          <p className="text-white/90 drop-shadow-md opacity-80">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn"
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-5 rounded-2xl shadow-xl transition-transform hover:scale-105"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="text-2xl font-semibold text-white/90 drop-shadow-md mb-2">Learn &rarr;</h2>
-          <p className="text-white/90 drop-shadow-md opacity-80">
-            Interactive course with quizzes to level up your Next.js skills.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js"
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-5 rounded-2xl shadow-xl transition-transform hover:scale-105"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="text-2xl font-semibold text-white/90 drop-shadow-md mb-2">Templates &rarr;</h2>
-          <p className="text-white/90 drop-shadow-md opacity-80">
-            Pre-built Next.js projects you can clone and deploy instantly.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new"
-          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-5 rounded-2xl shadow-xl transition-transform hover:scale-105"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="text-2xl font-semibold text-white/90 drop-shadow-md mb-2">Deploy &rarr;</h2>
-          <p className="text-white/90 drop-shadow-md opacity-80">
-            Launch your Next.js app with a single click on Vercel.
-          </p>
-        </a>
+        {[{"href": "https://nextjs.org/docs", "title": "Docs →", "desc": "Find in-depth information about Next.js features and API."}, {"href": "https://nextjs.org/learn", "title": "Learn →", "desc": "Interactive course with quizzes to level up your Next.js skills."}, {"href": "https://vercel.com/templates?framework=next.js", "title": "Templates →", "desc": "Pre-built Next.js projects you can clone and deploy instantly."}, {"href": "https://vercel.com/new", "title": "Deploy →", "desc": "Launch your Next.js app with a single click on Vercel."}].map((card) => (
+          <a
+            key={card.href}
+            href={card.href}
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl p-6 flex flex-col justify-between transition-transform hover:scale-105 hover:shadow-2xl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className="text-2xl font-semibold text-white/90 drop-shadow-md mb-2">{card.title}</h2>
+            <p className="text-white/90 drop-shadow-md opacity-80">{card.desc}</p>
+          </a>
+        ))}
       </section>
 
       {/* Call-to-Action Panel */}
-      <section className="w-full max-w-6xl bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 mb-6 flex flex-col items-center text-center">
+      <section className="w-full max-w-6xl bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center">
         <h2 className="text-3xl font-bold text-white/90 drop-shadow-md mb-4">Build Your AI Tools</h2>
-        <p className="text-white/90 drop-shadow-md opacity-90 mb-4">
+        <p className="text-white/90 drop-shadow-md opacity-90 mb-6">
           Add custom AI modules, track autonomous tasks, and manage all workflows in one place.
         </p>
-        <button className="px-4 py-2 rounded-lg bg-white/20 backdrop-blur-sm border border-white/25 text-white hover:bg-white/30 hover:border-white/40 transition-all">Create Tool</button>
+        <button className="px-6 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/25 text-white hover:bg-white/30 hover:border-white/40 transition-all font-semibold">
+          Create Tool
+        </button>
       </section>
 
       {/* Footer */}
