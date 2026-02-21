@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-start p-8 gap-8 bg-gradient-to-b from-zinc-100 via-white to-zinc-50 dark:from-zinc-900 dark:via-black dark:to-zinc-900">
+    <main className="main-glass">
       {/* Header */}
       <header className="w-full max-w-6xl text-center">
-        <h1 className="text-4xl font-extrabold text-white/90 drop-shadow-md mb-2">
+        <h1 className="header-glass">
           Mission Control &mdash; Autonomous AI Operations
         </h1>
-        <p className="text-white/90 drop-shadow-md text-lg">
+        <p className="text-glass text-lg">
           Your AI cockpit for building, tracking, and deploying autonomous workflows.
         </p>
       </header>
@@ -28,23 +28,23 @@ export default function Home() {
       <section className="grid w-full max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {[ { href: "https://nextjs.org/docs", title: "Docs →", desc: "Find in-depth information about Next.js features and API." }, { href: "https://nextjs.org/learn", title: "Learn →", desc: "Interactive course with quizzes to level up your Next.js skills." }, { href: "https://vercel.com/templates?framework=next.js", title: "Templates →", desc: "Pre-built Next.js projects you can clone and deploy instantly." }, { href: "https://vercel.com/new", title: "Deploy →", desc: "Launch your Next.js app with a single click on Vercel." } ].map((card) => (
           <a key={card.href} href={card.href}
-            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl p-6 flex flex-col justify-between transition-transform hover:scale-105 hover:shadow-2xl"
+            className="card-glass flex flex-col justify-between"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h2 className="text-2xl font-semibold text-white/90 drop-shadow-md mb-2">{card.title}</h2>
-            <p className="text-white/90 drop-shadow-md opacity-80">{card.desc}</p>
+            <h2 className="text-2xl font-semibold text-glass mb-2">{card.title}</h2>
+            <p className="text-glass opacity-80">{card.desc}</p>
           </a>
         ))}
       </section>
 
       {/* Call-to-Action Panel */}
-      <section className="w-full max-w-6xl bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center">
-        <h2 className="text-3xl font-bold text-white/90 drop-shadow-md mb-4">Build Your AI Tools</h2>
-        <p className="text-white/90 drop-shadow-md opacity-90 mb-6">
+      <section className="w-full max-w-6xl panel flex flex-col items-center text-center">
+        <h2 className="text-3xl font-bold text-glass mb-4">Build Your AI Tools</h2>
+        <p className="text-glass opacity-90 mb-6">
           Add custom AI modules, track autonomous tasks, and manage all workflows in one place.
         </p>
-        <button className="px-6 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/25 text-white hover:bg-white/30 hover:border-white/40 transition-all font-semibold">
+        <button className="btn-glass font-semibold">
           Create Tool
         </button>
       </section>
@@ -52,7 +52,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full max-w-6xl flex justify-center items-center py-8">
         <a
-          className="flex items-center gap-2 text-sky-400 hover:text-sky-300 underline decoration-sky-200 hover:decoration-sky-100 transition-colors"
+          className="flex items-center gap-2 link-glass"
           href="https://vercel.com"
           target="_blank"
           rel="noopener noreferrer"
