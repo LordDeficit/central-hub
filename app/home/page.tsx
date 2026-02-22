@@ -59,40 +59,12 @@ export default function HomePage() {
     { title: "Twitter thread on systems", status: "Pending", priority: "Low" },
   ];
 
-  const glassCard = {
-    padding: "1.25rem",
-    borderRadius: "1rem",
-    backgroundColor: "rgba(30, 30, 40, 0.6)",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
-    backdropFilter: "blur(12px)",
-    WebkitBackdropFilter: "blur(12px)",
-  };
-
-  const glassPanel = {
-    padding: "1.5rem",
-    borderRadius: "1rem",
-    backgroundColor: "rgba(30, 30, 40, 0.6)",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
-    backdropFilter: "blur(12px)",
-    WebkitBackdropFilter: "blur(12px)",
-  };
-
-  const glassButton = {
-    padding: "0.5rem 1rem",
-    borderRadius: "0.5rem",
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
-    border: "1px solid rgba(255, 255, 255, 0.2)",
-    color: "white",
-    cursor: "pointer",
-    transition: "all 0.2s",
-  };
 
   return (
     <div className="flex min-h-screen bg-black">
       {/* Sidebar */}
       <aside 
-        className="w-72 border-r border-white/10 relative overflow-hidden"
-        style={{ backgroundColor: "rgba(10, 10, 15, 0.95)" }}
+        className="w-72 border-r border-white/10 relative overflow-hidden sidebar-glass"
       >
         {/* Gradient glow at top */}
         <div 
@@ -105,11 +77,7 @@ export default function HomePage() {
         <div className="relative p-6">
           {/* Logo section with glow */}
           <div 
-            className="mb-8 flex items-center gap-4 p-4 rounded-2xl"
-            style={{
-              background: "linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(30, 30, 40, 0.8) 100%)",
-              border: "1px solid rgba(59, 130, 246, 0.3)",
-            }}
+            className="mb-8 flex items-center gap-4 p-4 rounded-2xl glass"
           >
             <div 
               className="flex h-12 w-12 items-center justify-center rounded-xl text-xl font-bold text-white shadow-lg"
@@ -136,14 +104,12 @@ export default function HomePage() {
                   href={item.href}
                   className={`group flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-200 ${
                     item.active
-                      ? "text-white"
-                      : "text-gray-400 hover:text-white"
+                      ? "text-white glass"
+                      : "text-gray-400 hover:text-white hover:bg-white/5"
                   }`}
                   style={{
-                    background: item.active 
-                      ? "linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.05) 100%)" 
-                      : "transparent",
                     borderLeft: item.active ? "3px solid #3b82f6" : "3px solid transparent",
+                    boxShadow: item.active ? "0 0 15px rgba(59, 130, 246, 0.2)" : "none",
                   }}
                 >
                   <span 
@@ -174,11 +140,7 @@ export default function HomePage() {
             }}
           >
             <div 
-              className="rounded-xl p-4"
-              style={{
-                backgroundColor: "rgba(30, 30, 40, 0.6)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-              }}
+              className="rounded-xl p-4 glass"
             >
               <div className="flex items-center gap-3">
                 <div 
@@ -215,8 +177,8 @@ export default function HomePage() {
           {stats.map((stat, i) => (
             <div 
               key={stat.label} 
+              className="card-glass"
               style={{
-                ...glassCard,
                 borderLeft: i === 0 ? "3px solid #3b82f6" : 
                            i === 1 ? "3px solid #10b981" :
                            i === 2 ? "3px solid #f59e0b" : "3px solid #8b5cf6",
@@ -233,10 +195,10 @@ export default function HomePage() {
         <div className="grid gap-6 lg:grid-cols-3">
           {/* Recent Tasks */}
           <div className="lg:col-span-2">
-            <div style={glassPanel}>
+            <div className="panel">
               <div className="mb-4 flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-white">Recent Tasks</h3>
-                <button style={glassButton} className="hover:bg-white/20">View All</button>
+                <button className="btn-glass hover:bg-white/20">View All</button>
               </div>
               <div className="space-y-3">
                 {recentTasks.map((task) => (
@@ -279,19 +241,13 @@ export default function HomePage() {
 
           {/* Quick Actions */}
           <div>
-            <div style={glassPanel}>
+            <div className="panel">
               <h3 className="mb-4 text-lg font-semibold text-white">Quick Actions</h3>
               <div className="space-y-3">
                 {["+ New Task", "+ New Project", "Create Doc", "Create Sheet"].map((action) => (
                   <button 
                     key={action}
-                    style={{
-                      ...glassButton,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                    }} 
-                    className="w-full text-left hover:bg-white/20 group"
+                    className="btn-glass w-full text-left hover:bg-white/20 group flex items-center gap-3"
                   >
                     <span className="text-blue-400 group-hover:text-blue-300">+</span>
                     {action.replace("+ ", "")}
@@ -300,7 +256,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div style={{ ...glassPanel, marginTop: "1rem" }}>
+            <div className="panel mt-4">
               <h3 className="mb-4 text-lg font-semibold text-white">System Status</h3>
               <div className="space-y-3 text-sm">
                 {[
